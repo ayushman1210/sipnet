@@ -1545,8 +1545,12 @@ void updateMainPools(void) {
   //     L   = fluxes.leafCreation
   // :: from [3], additional root terms (woodCreation, fineRootC, coarseRootC)
   //    from NPP allocation
-  envi.plantWoodC += (fluxes.photosynthesis + fluxes.woodCreation -
-                      fluxes.leafCreation - fluxes.woodLitter - fluxes.rVeg -
+  // Update plant wood only by allocation to wood and losses (litter and
+  // turnover). Photosynthesis and respiration are accounted for when
+  // computing NPP and allocations (fluxes.leafCreation, fluxes.woodCreation,
+  // fluxes.coarseRootCreation, fluxes.fineRootCreation). Avoid treating
+  // `fluxes.woodCreation` as a net external C input.
+  envi.plantWoodC += (fluxes.woodCreation - fluxes.woodLitter -
                       fluxes.coarseRootCreation - fluxes.fineRootCreation) *
                      climate->length;
 
