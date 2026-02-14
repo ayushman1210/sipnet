@@ -125,61 +125,50 @@
 \DoxyCodeLine{00121\ \ \ \}}
 \DoxyCodeLine{00122\ \}}
 \DoxyCodeLine{00123\ }
-\DoxyCodeLine{00124\ \textcolor{comment}{//\ For\ each\ output\ item,\ write\ its\ name\ as\ header}}
-\DoxyCodeLine{00125\ \textcolor{keywordtype}{void}\ writeOutputItemHeaders(OutputItems\ *outputItems)\ \{}
+\DoxyCodeLine{00124\ \textcolor{comment}{//\ For\ each\ output\ item,\ write\ its\ current\ value,\ followed\ by\ a\ separator}}
+\DoxyCodeLine{00125\ \textcolor{keywordtype}{void}\ writeOutputItemValues(OutputItems\ *outputItems)\ \{}
 \DoxyCodeLine{00126\ \ \ SingleOutputItem\ *singleOutputItem;}
 \DoxyCodeLine{00127\ }
 \DoxyCodeLine{00128\ \ \ singleOutputItem\ =\ outputItems-\/>head-\/>nextItem;}
 \DoxyCodeLine{00129\ \ \ \textcolor{keywordflow}{while}\ (singleOutputItem\ !=\ NULL)\ \{}
-\DoxyCodeLine{00130\ \ \ \ \ fprintf(singleOutputItem-\/>f,\ \textcolor{stringliteral}{"{}\%s\(\backslash\)n"{}},\ singleOutputItem-\/>name);}
-\DoxyCodeLine{00131\ \ \ \ \ singleOutputItem\ =\ singleOutputItem-\/>nextItem;}
-\DoxyCodeLine{00132\ \ \ \}}
-\DoxyCodeLine{00133\ \}}
-\DoxyCodeLine{00134\ }
-\DoxyCodeLine{00135\ \textcolor{comment}{//\ For\ each\ output\ item,\ write\ its\ current\ value,\ followed\ by\ a\ separator}}
-\DoxyCodeLine{00136\ \textcolor{keywordtype}{void}\ writeOutputItemValues(OutputItems\ *outputItems)\ \{}
-\DoxyCodeLine{00137\ \ \ SingleOutputItem\ *singleOutputItem;}
-\DoxyCodeLine{00138\ }
-\DoxyCodeLine{00139\ \ \ singleOutputItem\ =\ outputItems-\/>head-\/>nextItem;}
-\DoxyCodeLine{00140\ \ \ \textcolor{keywordflow}{while}\ (singleOutputItem\ !=\ NULL)\ \{}
-\DoxyCodeLine{00141\ \ \ \ \ fprintf(singleOutputItem-\/>f,\ \textcolor{stringliteral}{"{}\%f\%c"{}},\ *(singleOutputItem-\/>ptr),}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ outputItems-\/>separator);}
-\DoxyCodeLine{00143\ \ \ \ \ singleOutputItem\ =\ singleOutputItem-\/>nextItem;}
-\DoxyCodeLine{00144\ \ \ \}}
-\DoxyCodeLine{00145\ \}}
-\DoxyCodeLine{00146\ }
-\DoxyCodeLine{00147\ \textcolor{comment}{/*\ For\ each\ output\ item,\ write\ a\ newline}}
-\DoxyCodeLine{00148\ \textcolor{comment}{\ \ \ This\ is\ intended\ to\ be\ called\ at\ the\ end\ of\ each\ run}}
-\DoxyCodeLine{00149\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{00150\ \textcolor{keywordtype}{void}\ terminateOutputItemLines(OutputItems\ *outputItems)\ \{}
-\DoxyCodeLine{00151\ \ \ SingleOutputItem\ *singleOutputItem;}
-\DoxyCodeLine{00152\ }
-\DoxyCodeLine{00153\ \ \ singleOutputItem\ =\ outputItems-\/>head-\/>nextItem;}
-\DoxyCodeLine{00154\ \ \ \textcolor{keywordflow}{while}\ (singleOutputItem\ !=\ NULL)\ \{}
-\DoxyCodeLine{00155\ \ \ \ \ fprintf(singleOutputItem-\/>f,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{00156\ \ \ \ \ singleOutputItem\ =\ singleOutputItem-\/>nextItem;}
-\DoxyCodeLine{00157\ \ \ \}}
-\DoxyCodeLine{00158\ \}}
+\DoxyCodeLine{00130\ \ \ \ \ fprintf(singleOutputItem-\/>f,\ \textcolor{stringliteral}{"{}\%f\%c"{}},\ *(singleOutputItem-\/>ptr),}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ outputItems-\/>separator);}
+\DoxyCodeLine{00132\ \ \ \ \ singleOutputItem\ =\ singleOutputItem-\/>nextItem;}
+\DoxyCodeLine{00133\ \ \ \}}
+\DoxyCodeLine{00134\ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \textcolor{comment}{/*\ For\ each\ output\ item,\ write\ a\ newline}}
+\DoxyCodeLine{00137\ \textcolor{comment}{\ \ \ This\ is\ intended\ to\ be\ called\ at\ the\ end\ of\ each\ run}}
+\DoxyCodeLine{00138\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00139\ \textcolor{keywordtype}{void}\ terminateOutputItemLines(OutputItems\ *outputItems)\ \{}
+\DoxyCodeLine{00140\ \ \ SingleOutputItem\ *singleOutputItem;}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ singleOutputItem\ =\ outputItems-\/>head-\/>nextItem;}
+\DoxyCodeLine{00143\ \ \ \textcolor{keywordflow}{while}\ (singleOutputItem\ !=\ NULL)\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ fprintf(singleOutputItem-\/>f,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00145\ \ \ \ \ singleOutputItem\ =\ singleOutputItem-\/>nextItem;}
+\DoxyCodeLine{00146\ \ \ \}}
+\DoxyCodeLine{00147\ \}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \textcolor{comment}{/*\ Free\ up\ space\ used\ by\ outputItems}}
+\DoxyCodeLine{00150\ \textcolor{comment}{\ \ \ Also,\ close\ all\ files\ associated\ with\ the\ individual\ output\ items}}
+\DoxyCodeLine{00151\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00152\ \textcolor{keywordtype}{void}\ deleteOutputItems(OutputItems\ *outputItems)\ \{}
+\DoxyCodeLine{00153\ \ \ SingleOutputItem\ *curr,\ *temp;}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ curr\ =\ outputItems-\/>head;}
+\DoxyCodeLine{00156\ \ \ \textcolor{keywordflow}{while}\ (curr\ !=\ NULL)\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ temp\ =\ curr;}
+\DoxyCodeLine{00158\ \ \ \ \ curr\ =\ curr-\/>nextItem;}
 \DoxyCodeLine{00159\ }
-\DoxyCodeLine{00160\ \textcolor{comment}{/*\ Free\ up\ space\ used\ by\ outputItems}}
-\DoxyCodeLine{00161\ \textcolor{comment}{\ \ \ Also,\ close\ all\ files\ associated\ with\ the\ individual\ output\ items}}
-\DoxyCodeLine{00162\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{00163\ \textcolor{keywordtype}{void}\ deleteOutputItems(OutputItems\ *outputItems)\ \{}
-\DoxyCodeLine{00164\ \ \ SingleOutputItem\ *curr,\ *temp;}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordflow}{if}\ (temp-\/>f\ !=\ NULL)\ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ closeOutputItemFile(temp);}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ free(temp);}
+\DoxyCodeLine{00163\ \ \ \ \ \}}
+\DoxyCodeLine{00164\ \ \ \}}
 \DoxyCodeLine{00165\ }
-\DoxyCodeLine{00166\ \ \ curr\ =\ outputItems-\/>head;}
-\DoxyCodeLine{00167\ \ \ \textcolor{keywordflow}{while}\ (curr\ !=\ NULL)\ \{}
-\DoxyCodeLine{00168\ \ \ \ \ temp\ =\ curr;}
-\DoxyCodeLine{00169\ \ \ \ \ curr\ =\ curr-\/>nextItem;}
-\DoxyCodeLine{00170\ }
-\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordflow}{if}\ (temp-\/>f\ !=\ NULL)\ \{}
-\DoxyCodeLine{00172\ \ \ \ \ \ \ closeOutputItemFile(temp);}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ free(temp);}
-\DoxyCodeLine{00174\ \ \ \ \ \}}
-\DoxyCodeLine{00175\ \ \ \}}
-\DoxyCodeLine{00176\ }
-\DoxyCodeLine{00177\ \ \ free(outputItems-\/>filenameBase);}
-\DoxyCodeLine{00178\ \ \ free(outputItems);}
-\DoxyCodeLine{00179\ \}}
+\DoxyCodeLine{00166\ \ \ free(outputItems-\/>filenameBase);}
+\DoxyCodeLine{00167\ \ \ free(outputItems);}
+\DoxyCodeLine{00168\ \}}
 
 \end{DoxyCode}

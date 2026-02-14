@@ -7,5 +7,5 @@ var searchData=
   ['readparamdata_4',['readParamData',['../dd/d09/sipnet_8c.html#af9e9d170e57aeefe91bb24310470dd7c',1,'sipnet.c']]],
   ['reseteventfluxes_5',['reseteventfluxes',['../de/deb/events_8c.html#a12a8b3b4bb0688542d26bdb00f9c1961',1,'resetEventFluxes(void):&#160;events.c'],['../db/dd2/events_8h.html#a12a8b3b4bb0688542d26bdb00f9c1961',1,'resetEventFluxes(void):&#160;events.c']]],
   ['resetmeantracker_6',['resetmeantracker',['../d5/d1f/runmean_8c.html#aafa097eaf82986761f1920d2a1ed2457',1,'resetMeanTracker(MeanTracker *tracker, double initMean):&#160;runmean.c'],['../de/d1e/runmean_8h.html#aafa097eaf82986761f1920d2a1ed2457',1,'resetMeanTracker(MeanTracker *tracker, double initMean):&#160;runmean.c']]],
-  ['runmodeloutput_7',['runmodeloutput',['../dd/d09/sipnet_8c.html#ab61afee3342bf6ddab6168623777b71a',1,'runModelOutput(FILE *out, OutputItems *outputItems):&#160;sipnet.c'],['../de/de4/sipnet_8h.html#ab61afee3342bf6ddab6168623777b71a',1,'runModelOutput(FILE *out, OutputItems *outputItems):&#160;sipnet.c']]]
+  ['runmodeloutput_7',['runmodeloutput',['../dd/d09/sipnet_8c.html#af6d23e2711c7acdd2f52fd1946185796',1,'runModelOutput(FILE *out, OutputItems *outputItems, int printHeader):&#160;sipnet.c'],['../de/de4/sipnet_8h.html#af6d23e2711c7acdd2f52fd1946185796',1,'runModelOutput(FILE *out, OutputItems *outputItems, int printHeader):&#160;sipnet.c']]]
 ];

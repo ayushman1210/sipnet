@@ -25,6 +25,6 @@ var searchData=
   ['rtot_22',['rtot',['../d3/d1f/struct_tracker_vars.html#adf0cf7040532c1c0044ff78faa824981',1,'TrackerVars']]],
   ['runmean_2ec_23',['runmean.c',['../d5/d1f/runmean_8c.html',1,'']]],
   ['runmean_2eh_24',['runmean.h',['../de/d1e/runmean_8h.html',1,'']]],
-  ['runmodeloutput_25',['runmodeloutput',['../dd/d09/sipnet_8c.html#ab61afee3342bf6ddab6168623777b71a',1,'runModelOutput(FILE *out, OutputItems *outputItems):&#160;sipnet.c'],['../de/de4/sipnet_8h.html#ab61afee3342bf6ddab6168623777b71a',1,'runModelOutput(FILE *out, OutputItems *outputItems):&#160;sipnet.c']]],
+  ['runmodeloutput_25',['runmodeloutput',['../dd/d09/sipnet_8c.html#af6d23e2711c7acdd2f52fd1946185796',1,'runModelOutput(FILE *out, OutputItems *outputItems, int printHeader):&#160;sipnet.c'],['../de/de4/sipnet_8h.html#af6d23e2711c7acdd2f52fd1946185796',1,'runModelOutput(FILE *out, OutputItems *outputItems, int printHeader):&#160;sipnet.c']]],
   ['rveg_26',['rVeg',['../da/d95/struct_flux_vars.html#a78a5d006f66342f58b68ee21d149cc9a',1,'FluxVars']]]
 ];
