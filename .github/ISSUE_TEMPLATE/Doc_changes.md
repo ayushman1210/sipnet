@@ -1,18 +1,22 @@
 ---
 name: Documentation Changes
-about: Create a report to help us improve
+about: Report an issue with the documentation or suggest improvements
 
 ---
 
-### Document Change needed
+### Documentation Change Needed
 
-A clear description of what changes are needed with the location of the error, or that needs to be fixed.
+A clear description of what changes are needed and the location of the page or section that needs to be updated or fixed.
 
 Example: 
-There is a broken URL link in the documentation. It is in the parameters documentation. The underlying file is `docs/parameters.md`. The correct link should be https://aws.amazon.com/.
+There is a broken URL link in the parameters documentation. The underlying file is `docs/parameters.md`.
 
-### Information for those wanting to make changes
+### Suggested Improvement or Correction
 
-Please refer to the documentation guidelines in `CONTRIBUTING.md` to learn how to make changes to the documentation.
+A description of the suggested correction or addition.
 
-All markdown files related to documentation are located within the main directory `docs/`.
+### Information for Contributors
+
+Please refer to the documentation guidelines in [CONTRIBUTING.md](../../docs/CONTRIBUTING.md) to learn how to preview (`mkdocs serve`) and make changes to the documentation.
+
+All documentation source files are located in the `docs/` directory.
